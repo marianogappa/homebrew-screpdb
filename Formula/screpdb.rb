@@ -5,28 +5,28 @@
 class Screpdb < Formula
   desc "Advanced StarCraft: Brood War replay reporting tool (CLI + local dashboard)"
   homepage "https://github.com/marianogappa/screpdb"
-  version "1.18.0"
+  version "1.19.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/marianogappa/screpdb/releases/download/v1.18.0/screpdb-darwin-arm64"
-      sha256 "aaab141a60f2f96f94e59f150434146f9d641357194a1eaecb0efbb1f47794f3"
+      url "https://github.com/marianogappa/screpdb/releases/download/v1.19.0/screpdb-darwin-arm64"
+      sha256 "614971a10e009c6f5d157560723795e34ecae425f71789e1ba1f1fd84074d0f8"
     end
     on_intel do
-      url "https://github.com/marianogappa/screpdb/releases/download/v1.18.0/screpdb-darwin-amd64"
-      sha256 "fc83c82cc8d14bb0386653e802f395d6d034f41d5cd441714434576aefca201f"
+      url "https://github.com/marianogappa/screpdb/releases/download/v1.19.0/screpdb-darwin-amd64"
+      sha256 "2e172f5f435c8b9dcda85199a878843c1882150b2c07197776aa5bc2c0fd89f3"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/marianogappa/screpdb/releases/download/v1.18.0/screpdb-linux-arm64"
-      sha256 "34433d9842c73a70810b01ae593f0641e275b489f7a45197748b53bec851e424"
+      url "https://github.com/marianogappa/screpdb/releases/download/v1.19.0/screpdb-linux-arm64"
+      sha256 "3d6a80473c248ca1b4145bb7b29a749cc1db7ed1d9b154d421c1a97b916544d8"
     end
     on_intel do
-      url "https://github.com/marianogappa/screpdb/releases/download/v1.18.0/screpdb-linux-amd64"
-      sha256 "02844e7160114889b7a8fbd94f36245a96fe7090d06ac4e4388fee673bb4ca33"
+      url "https://github.com/marianogappa/screpdb/releases/download/v1.19.0/screpdb-linux-amd64"
+      sha256 "f6cd4a14ef3cd6859d5c13e4476e88443329917343b239c5f1cf1f907077490f"
     end
   end
 
