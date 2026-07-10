@@ -5,33 +5,43 @@
 class Screpdb < Formula
   desc "Advanced StarCraft: Brood War replay reporting tool (CLI + local dashboard)"
   homepage "https://github.com/marianogappa/screpdb"
-  version "1.23.2"
+  version "1.24.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/marianogappa/screpdb/releases/download/v1.23.2/screpdb-darwin-arm64"
-      sha256 "60b9b622f252fa25793ebbcffb7cc10d3b45124f168989c88e4e70eceee49115"
+      url "https://github.com/marianogappa/screpdb/releases/download/v1.24.0/screpdb-darwin-arm64"
+      sha256 "9a5bdfa879640c7957d8796365faa30bc700f9d00011df8b2d2daa93f0ab43d4"
     end
     on_intel do
-      url "https://github.com/marianogappa/screpdb/releases/download/v1.23.2/screpdb-darwin-amd64"
-      sha256 "1d02fdf0d5bc1c72ee7817216a389264713661e4cfafeb76076ed4ced2676292"
+      url "https://github.com/marianogappa/screpdb/releases/download/v1.24.0/screpdb-darwin-amd64"
+      sha256 "ae28b039c47341b40cbaec6f3d673a1a220a93109de8541189fed0b86c15df87"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/marianogappa/screpdb/releases/download/v1.23.2/screpdb-linux-arm64"
-      sha256 "50b59508780e96042533d3138449a178f0bc0e1ad7724022c6914ce36249a079"
+      url "https://github.com/marianogappa/screpdb/releases/download/v1.24.0/screpdb-linux-arm64"
+      sha256 "426af213c0e397f22c267188330abed5afa7745d7f39c02758affe7a0e42535c"
     end
     on_intel do
-      url "https://github.com/marianogappa/screpdb/releases/download/v1.23.2/screpdb-linux-amd64"
-      sha256 "6400981fb6b7ee9568f7760366c520baf2dbc07874cd024bfaadebae391d9129"
+      url "https://github.com/marianogappa/screpdb/releases/download/v1.24.0/screpdb-linux-amd64"
+      sha256 "b6c6c8a8ec2a2a76069adb8476c1f85dd04e23d274c2099f238efd4d2071cddb"
     end
   end
 
   def install
     bin.install Dir["screpdb-*"].first => "screpdb"
+  end
+
+  def caveats
+    dir = OS.mac? ? "~/Library/Application Support/screpdb" : "${XDG_CONFIG_HOME:-$HOME/.config}/screpdb"
+    <<~EOS
+      screpdb keeps its database and settings in a single folder:
+        #{dir}
+      This is left untouched on uninstall. To remove your data too, run:
+        rm -rf "#{dir}"
+    EOS
   end
 
   test do
